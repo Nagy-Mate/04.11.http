@@ -1,0 +1,6 @@
+###List all
+GET http://api.napiarfolyam.hu
+####
+GET http://api.napiarfolyam.hu?bank=mnb&datum=20240311&datumend=20240411
+###
+GET http://api.napiarfolyam.hu?bank=mnb&valuta=eur&datum=20240311&datumend=20240411
