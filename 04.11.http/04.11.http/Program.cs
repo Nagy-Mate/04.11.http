@@ -35,7 +35,7 @@ async Task ValutaKivalasztas()
 
         if (todo != Menu.exit && check)
         {
-            await Valtas(todo);
+            Valtas(todo);
         }
         else if (!check)
         {
@@ -57,12 +57,12 @@ async Task Valtas(Enum todo)
     result = (arfolyamok)serializer.Deserialize(reader);
     Szamolas(result);
 }
-void Szamolas(arfolyamok result)
+async Task Szamolas(arfolyamok result)
 {
     var doCheck = false;
     do
     {
-        Console.Write("Mennyi forintot szeretne váltani: ");
+        await Console.Out.WriteLineAsync("Mennyi forintot szeretne váltani: ");
         var check = int.TryParse(Console.ReadLine(), out var ft);
         if(check && ft > 0)
         {
